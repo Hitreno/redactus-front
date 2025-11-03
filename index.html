@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105097751', 'ym');
+    
+      ym(105097751, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/105097751" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Редактус — посты за 3 минуты в вашем стиле</title>
+    <meta
+      name="description"
+      content="Редактус превращает голосовые сообщения в готовые публикации с вашим стилем — быстрые посты без рутины."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="site-header__inner">
+        <a class="brand" href="#hero">
+          <img class="brand__mark" src="assets/images/logo.png" alt="Редактус" width="36" height="36" />
+          <span>Редактус</span>
+        </a>
+        <nav class="nav-links" aria-label="Основное меню">
+          <a class="nav-link" href="#benefits" data-nav-link>Преимущества</a>
+          <a class="nav-link" href="#workflow" data-nav-link>Как работает</a>
+          <a class="nav-link" href="#pricing" data-nav-link>Тарифы</a>
+          <a class="nav-link" href="#fits" data-nav-link>Кому подойдет</a>
+          <a class="nav-link" href="#faq" data-nav-link>FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a class="button button--primary header-login" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21.5 3.5 2.5 10.5c-.9.3-.9 1.5 0 1.8l4.8 1.6c.3.1.6.1.8 0l8.4-5.3c.2-.1.4.1.2.2l-6.8 6.2c-.3.3-.2.8.2 1л10.9 6.2c.6.3 1.3-.2 1.2-.9L22.3 4.3c-.1-.6-.7-.9-1.3-.8Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>Войти</span>
+          </a>
+          <a class="button button--outline header-contact" href="#contact">Связаться</a>
+        </div>
+        <button class="header-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+          <span class="header-toggle__line"></span>
+          <span class="header-toggle__line"></span>
+          <span class="header-toggle__line"></span>
+          <span class="sr-only">Меню</span>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+        <div class="mobile-nav__panel">
+          <nav class="mobile-nav__links" aria-label="Мобильное меню">
+            <a class="mobile-nav__link" href="#benefits" data-mobile-link>Преимущества</a>
+            <a class="mobile-nav__link" href="#workflow" data-mobile-link>Как работает</a>
+            <a class="mobile-nav__link" href="#pricing" data-mobile-link>Тарифы</a>
+            <a class="mobile-nav__link" href="#fits" data-mobile-link>Кому подойдет</a>
+            <a class="mobile-nav__link" href="#faq" data-mobile-link>FAQ</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section" data-section>
+        <div class="container hero">
+          <div class="hero__content">
+            <h1 class="hero__title">Создавайте посты за 3 минуты. Голосом, в вашем стиле</h1>
+            <p class="hero__text">
+              Записали голосовое — получили готовый текст. Редактус превращает ваши идеи в посты, которые звучат как вы.
+            </p>
+            <div class="hero__actions">
+              <div class="hero__buttons">
+                <a class="button button--primary" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M21.5 3.5 2.5 10.5c-.9.3-.9 1.5 0 1.8l4.8 1.6c.3.1.6.1.8 0l8.4-5.3c.2-.1.4.1.2.2l-6.8 6.2c-.3.3-.2.8.2 1l10.9 6.2c.6.3 1.3-.2 1.2-.9L22.3 4.3c-.1-.6-.7-.9-1.3-.8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Перейти в @redactusbot
+                </a>
+                <a class="button button--outline" href="#contact">Связаться</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <img
+              class="hero__image"
+              src="assets/images/genex1.png"
+              alt="Пример поста, созданного сервисом Редактус"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="highlights" class="section">
+        <div class="container">
+          <div class="highlights__header">
+            <h2 class="highlights__title">Выкладывайте экспертные посты без рутины</h2>
+            <p class="highlights__text">
+              Сервис анализирует ваши статьи и превращает голосовые заметки в вычитанные публикации за пару минут.
+            </p>
+          </div>
+          <article class="card card--soft highlights__card">
+            <ul class="hero__list">
+              <li class="hero__list-item">
+                <span class="hero__list-bullet">✔</span>
+                <span>Пришла идея? Просто запишите голосовое сообщение телеграм-боту.</span>
+              </li>
+              <li class="hero__list-item">
+                <span class="hero__list-bullet">✔</span>
+                <span>Он подготовит текст по примеру ваших прошлых постов.</span>
+              </li>
+              <li class="hero__list-item">
+                <span class="hero__list-bullet">✔</span>
+                <span>Добавит заголовок, структуру, абзацы, эмодзи и CTA.</span>
+              </li>
+              <li class="hero__list-item">
+                <span class="hero__list-bullet">✔</span>
+                <span>Даст рекомендации по картинкам для финального поста.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="try" class="section" data-section>
+        <div class="container try-grid">
+          <div class="try-grid__main">
+            <h2 class="section__title">Попробуйте Редактус в Telegram</h2>
+            <p class="section__lead">
+              Передайте идею боту и получите готовый пост в своём стиле вместе с рекомендациями по визуалу.
+            </p>
+            <div class="try-grid__visual">
+              <div class="try-visual">
+                <a class="button button--primary try-visual__cta" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                  Попробовать в Telegram
+                </a>
+                <div class="try-visual__body">
+                  <img src="assets/images/genex1.png" alt="Скриншот результата работы Редактус" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="try-grid__sidebar">
+            <article class="card card--soft try-card">
+              <h3 class="card__title">Мини-инструкция по запуску</h3>
+              <ol class="mini-steps">
+                <li class="mini-steps__item">
+                  <span class="mini-steps__badge">1</span>
+                  <span>По желанию, добавьте ссылку на свой канал. Сервис изучит ваш стиль.</span>
+                </li>
+                <li class="mini-steps__item">
+                  <span class="mini-steps__badge">2</span>
+                  <span>Выберите какой нужен пост: краткий или объёмный.</span>
+                </li>
+                <li class="mini-steps__item">
+                  <span class="mini-steps__badge">3</span>
+                  <span>Запишите голосовое или напишите идею текстом.</span>
+                </li>
+                <li class="mini-steps__item">
+                  <span class="mini-steps__badge">4</span>
+                  <span>Получите готовый пост!</span>
+                </li>
+              </ol>
+            </article>
+            <article id="contact" class="card card--soft contact-card contact-card--inline try-card" data-section>
+              <h3 class="contact-card__title">Остались вопросы?</h3>
+              <form class="contact-form" data-callback-form>
+                <div class="form-field">
+                  <label for="name">Имя</label>
+                  <input id="name" name="name" type="text" placeholder="Как к вам обращаться" required />
+                </div>
+                <div class="form-field">
+                  <label for="contact-field">Контакт</label>
+                  <input id="contact-field" name="contact" type="text" placeholder="Телеграм или телефон" required />
+                </div>
+                <div class="form-field">
+                  <label for="comment">Комментарий</label>
+                  <textarea id="comment" name="comment" rows="3" placeholder="Чем можем помочь?"></textarea>
+                </div>
+                <div class="form-footer">
+                  <button type="submit" class="button button--primary">Оставить заявку</button>
+                  <p class="form-note success-note" data-note-success hidden>Спасибо! Мы свяжемся в течение дня.</p>
+                </div>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="section" data-section>
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Выкладывайте посты без пауз и перегрузок</h2>
+          </div>
+          <ul class="benefits-list">
+            <li class="benefits-list__item">
+              <span class="benefits-list__bullet">•</span>
+              <span>Тексты читаются как ваши. Сервис берёт за пример ваш канал.</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__bullet">•</span>
+              <span>Сделать пост из идеи можно за пару минут с телефона.</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__bullet">•</span>
+              <span>Отправьте старый черновик и получите готовый к публикации пост.</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__bullet">•</span>
+              <span>Сервис предложит какие фото или кейсы стоит добавить.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="workflow" class="section" data-section>
+        <div class="container">
+          <div class="workflow-intro">
+            <p class="section__lead">Редактус закрывает рутину, чтобы вы фокусировались на идеях и экспертизе.</p>
+          </div>
+          <div class="grid-two workflow-context">
+            <article class="card card--soft workflow-context__card">
+              <h3 class="card__title">Надоело тратить 3 часа в неделю на рутину, но нужно выпустить 2-3 поста?</h3>
+              <p class="card__text">
+                Приходится либо выкладывать реже, либо писать через силу. Мало найти идею — нужно ещё набрать текст и красиво оформить под
+                канал.
+              </p>
+            </article>
+            <article class="card card--soft workflow-context__card">
+              <h3 class="card__title">Хотите оптимизировать блог, чтобы выделить время на более важные задачи?</h3>
+              <p class="card__text">
+                Но видение и авторский стиль тяжело повторить. GPT выдаёт пластиковые тексты, отпугивающие подписчиков. Копирайтер не
+                эксперт в вашей нише и часто пишет не то.
+              </p>
+            </article>
+          </div>
+          <div class="workflow-grid">
+            <article class="workflow-card">
+              <span class="workflow-card__accent">1</span>
+              <h3 class="workflow-card__title">Выберите формат поста</h3>
+              <p class="workflow-card__text">
+                В боте доступны быстрые обновления и глубокие разборы. Готовый текст сразу соответствует выбранному формату.
+              </p>
+            </article>
+            <article class="workflow-card">
+              <span class="workflow-card__accent">2</span>
+              <h3 class="workflow-card__title">Запишите голосовое или идею текстом</h3>
+              <p class="workflow-card__text">
+                Редактус понимает экспертные мысли и подстраивает пост под ваш стиль и каналы.
+              </p>
+            </article>
+            <article class="workflow-card">
+              <span class="workflow-card__accent">3</span>
+              <h3 class="workflow-card__title">Отредактируйте и опубликуйте</h3>
+              <p class="workflow-card__text">
+                Сервис предложит улучшения, варианты CTA и рекомендации по визуалам — остаётся нажать «Опубликовать».
+              </p>
+            </article>
+          </div>
+          <div class="grid-two workflow-extra">
+            <article class="card card--soft">
+              <h3 class="card__title">Ведите блог в удовольствие</h3>
+              <p class="card__text">
+                Сервис забирает рутину оформления: пришла идея — надиктовали — получили пост и рекомендации по визуалу.
+              </p>
+            </article>
+            <article class="card card--soft">
+              <h3 class="card__title">Освободите время для важного</h3>
+              <p class="card__text">
+                Редактус держит ваш tone-of-voice, добавляет структуру, CTA и эмодзи, чтобы вы фокусировались на сути.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section" data-section>
+        <div class="container">
+          <div class="section__header text-center">
+            <h2 class="section__title">Тарифы под ваши задачи</h2>
+            <p class="section__lead">
+              Начните бесплатно, а когда контента станет больше — переходите на подходящий тариф.
+            </p>
+          </div>
+          <article class="card card--soft pricing-highlight">
+            <div class="pricing-highlight__header">
+              <span class="pricing-highlight__label">Бесплатный старт</span>
+              <p class="pricing-highlight__note">
+                10 постов и полный доступ к базовым инструментам, чтобы протестировать сервис.
+              </p>
+            </div>
+            <div class="pricing-highlight__body">
+              <div class="pricing-highlight__info">
+                <h3 class="pricing-highlight__title">Free</h3>
+                <ul class="pricing-highlight__features">
+                  <li>Настройка базового стиля</li>
+                  <li>Надиктовка голосом</li>
+                  <li>Рекомендации по улучшению</li>
+                </ul>
+              </div>
+              <div class="pricing-highlight__cta">
+                <p class="pricing-highlight__price">0₽</p>
+                <a class="button button--primary" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                  Попробовать бесплатно
+                </a>
+              </div>
+            </div>
+          </article>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3 class="card__title">Начало</h3>
+                <p class="card__text">Для стабильного контента в личном блоге.</p>
+                <div style="display: flex; align-items: baseline; gap: 8px;">
+                  <p class="pricing-card__price">1 800₽</p>
+                  <span class="muted" style="text-transform: uppercase; font-size: 0.75rem;">в месяц</span>
+                </div>
+              </div>
+              <div class="pricing-card__list">
+                <p>• Написание 10 постов/месяц</p>
+                <p>• Настройка вашего стиля</p>
+                <p>• Надиктовка голосом</p>
+                <p>• Рекомендации как улучшить тексты</p>
+              </div>
+              <a class="button button--outline" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                Выбрать тариф
+              </a>
+            </article>
+            <article class="pricing-card pricing-card--highlighted">
+              <span class="pricing-card__badge">★ популярно</span>
+              <div class="pricing-card__header">
+                <h3 class="card__title">Стандарт</h3>
+                <p class="card__text">Популярный выбор: больше постов и гибкая стилистика.</p>
+                <div style="display: flex; align-items: baseline; gap: 8px;">
+                  <p class="pricing-card__price">3 500₽</p>
+                  <span class="muted" style="text-transform: uppercase; font-size: 0.75rem;">в месяц</span>
+                </div>
+              </div>
+              <div class="pricing-card__list">
+                <p>• Написание 20 постов/месяц</p>
+                <p>• Всё из тарифа Старт</p>
+                <p>• Точечная донастройка стиля</p>
+                <p>• Ранний доступ к новым функциям</p>
+                <p>• Оплата по счёту</p>
+              </div>
+              <a class="button button--outline" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                Выбрать тариф
+              </a>
+            </article>
+            <article class="pricing-card">
+              <div class="pricing-card__header">
+                <h3 class="card__title">Студия</h3>
+                <p class="card__text">Для агентств и студий с несколькими каналами.</p>
+                <div style="display: flex; align-items: baseline; gap: 8px;">
+                  <p class="pricing-card__price">6 500₽</p>
+                  <span class="muted" style="text-transform: uppercase; font-size: 0.75rem;">в месяц</span>
+                </div>
+              </div>
+              <div class="pricing-card__list">
+                <p>• Написание 50 постов/месяц</p>
+                <p>• Всё из тарифа Стандарт</p>
+                <p>• До трёх каналов на ведении</p>
+                <p>• Можно докупать посты и каналы</p>
+              </div>
+              <a class="button button--outline" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                Выбрать тариф
+              </a>
+            </article>
+          </div>
+          <p class="muted" style="text-align: center; margin-top: 24px;">
+            Нужны спецусловия? Оставьте заявку <a class="link" href="#contact">в форме</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="fits" class="section" data-section>
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Сервис подойдёт для</h2>
+            <p class="section__lead">
+              Редактус адаптируется под ваши форматы: экспертные заметки, кейсы, апдейты и маркетинговые подборки.
+            </p>
+          </div>
+          <div class="segments-grid">
+            <article class="segment">
+              <h3 class="card__title">Эксперт</h3>
+              <p class="card__text">
+                Выкладывайте мысли и экспертные посты в своём стиле. Редактус органично напомнит об инфопродуктах.
+              </p>
+            </article>
+            <article class="segment">
+              <h3 class="card__title">Сфера услуг</h3>
+              <p class="card__text">
+                Регулярно напоминайте о сервисах: анонсы, кейсы, акции и отзывы оформлены за минуты.
+              </p>
+            </article>
+            <article class="segment">
+              <h3 class="card__title">Стартап</h3>
+              <p class="card__text">Оптимизируйте контент-маркетинг. Публикуйте инсайты и апдейты без простоев.</p>
+            </article>
+            <article class="segment">
+              <h3 class="card__title">SMM / Продюсер</h3>
+              <p class="card__text">Ведите несколько клиентов в их стиле. Ускоряйте процесс и берите больше проектов.</p>
+            </article>
+            <article class="segment">
+              <h3 class="card__title">Проектная студия</h3>
+              <p class="card__text">
+                Прогревайте аудиторию экспертными постами и кейсами. Редактус ненавязчиво упоминает услуги.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="compare" class="section" data-section>
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Редактус объединяет лучшие стороны привычных инструментов</h2>
+            <p class="section__lead">Оставляете авторский стиль, убираете рутину и получаете тексты быстрее.</p>
+          </div>
+          <div class="compare-grid">
+            <article class="compare-card">
+              <span class="compare-card__icon">★</span>
+              <h3 class="card__title">Готовить всё самостоятельно</h3>
+              <p class="card__text">
+                Максимум аутентичности, но каждый пост — это 40-60 минут набора текста и оформления. Редактус сохраняет голос и снимает
+                рутину.
+              </p>
+            </article>
+            <article class="compare-card">
+              <span class="compare-card__icon">★</span>
+              <h3 class="card__title">Использовать GPT</h3>
+              <p class="card__text">
+                Современно, но требует промптов и тюнинга. Часто получается «резиновый» текст. Редактус работает прямо в Telegram и
+                опирается на ваши прошлые посты.
+              </p>
+            </article>
+            <article class="compare-card">
+              <span class="compare-card__icon">★</span>
+              <h3 class="card__title">Нанимать копирайтера</h3>
+              <p class="card__text">
+                Дорого и не всегда попадает «как в голове эксперта». Редактус делает черновик «как вы», который легко докрутить.
+              </p>
+            </article>
+          </div>
+          <p class="italic" style="margin-top: 24px;">
+            Редактус объединяет эти плюсы: без потери вашего голоса, без сложных промптов и без передачи контрольной роли сторонним
+            авторам.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="section" data-section>
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">FAQ</h2>
+            <p class="section__lead">Ответы на самые частые вопросы про подключение, настройки и работу с ботом.</p>
+          </div>
+          <div class="faq" role="list">
+            <article class="faq__item">
+              <button type="button" class="faq__button" data-faq-toggle>
+                <span>Я специфично оформляю посты. Повторит ли это сервис?</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="faq__content" data-faq-content>
+                <p>
+                  Выберите тариф Стандарт или Премиум — туда входит донастройка стилистики. Мы повторим подписи, формат общения и
+                  заголовки.
+                </p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button type="button" class="faq__button" data-faq-toggle>
+                <span>Это долго подключать?</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="faq__content" data-faq-content>
+                <p>
+                  Около минуты. Перейдите в @redactusbot, при желании поделитесь ссылкой на канал. Если понадобится донастройка, она
+                  включена в тарифы Стандарт и Бизнес.
+                </p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button type="button" class="faq__button" data-faq-toggle>
+                <span>Если мне не понравится пост?</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="faq__content" data-faq-content>
+                <p>
+                  Отредактируйте текст или запустите генерацию снова. Если ситуация повторяется, мы точечно донастроим сервис под ваши
+                  правила — в тарифах Стандарт и Бизнес это входит.
+                </p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button type="button" class="faq__button" data-faq-toggle>
+                <span>Чем отличается от обычного GPT?</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="faq__content" data-faq-content>
+                <p>
+                  Редактус экономит время и удерживает ваш стиль. GPT требует промптов и выдаёт обезличенный текст, клиенты жалуются на
+                  «роботизированность».
+                </p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <button type="button" class="faq__button" data-faq-toggle>
+                <span>Не хочу давать доступ к каналу</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
+                </svg>
+              </button>
+              <div class="faq__content" data-faq-content>
+                <p>
+                  Мы не просим доступ. Достаточно ссылки, чтобы изучить канал как читатель. Если кто-то просит доступ от нашего имени —
+                  напишите @hitreno.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="section" data-section>
+        <div class="container">
+          <article class="card card--gradient cta">
+            <div class="cta__content">
+              <h2 class="cta__title">Просто раскройте мысль и опубликуйте</h2>
+              <p class="cta__text">
+                Редактус оформит пост, предложит визуалы и оставит ваш голос. Перейдите в бота и протестируйте сценарий бесплатно.
+              </p>
+            </div>
+            <div class="cta__actions">
+              <a class="button button--ghost" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                Начать в Telegram
+              </a>
+              <a class="button button--light" href="#contact">Оставить заявку</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <p class="site-footer__title">Редактус</p>
+            <p class="site-footer__description">Посты за 3 минуты в вашем стиле. Telegram: <strong>@redactusbot</strong></p>
+          </div>
+          <nav class="site-footer__nav" aria-label="Ссылки из футера">
+            <a href="#pricing">Тарифы</a>
+            <a href="#workflow">Как работает</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Контакты</a>
+          </nav>
+        </div>
+        <p class="site-footer__copy">© <span data-current-year></span> Redactus. Все права защищены.</p>
+      </div>
+    </footer>
+  </body>
+</html>
