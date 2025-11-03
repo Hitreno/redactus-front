@@ -51,54 +51,138 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const navToggle = document.querySelector("[data-nav-toggle]");
-  const mobileNav = document.querySelector("[data-mobile-nav]");
-  const mobileLinks = Array.from(document.querySelectorAll("[data-mobile-link]"));
+  const siteNav = document.querySelector("[data-nav]");
+  const navPanel = siteNav?.querySelector("[data-nav-panel]");
+  const navBackdrop = siteNav?.querySelector("[data-nav-backdrop]");
+  const desktopQuery = window.matchMedia("(min-width: 768px)");
 
-  if (navToggle && mobileNav) {
-    const closeMobileNav = () => {
-      navToggle.classList.remove("is-active");
-      navToggle.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("is-open");
-      mobileNav.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("menu-open");
+  if (navToggle && siteNav && navPanel) {
+    const headerInner = header?.querySelector(".site-header__inner");
+    const navReturnPoint = siteNav.nextElementSibling;
+
+    // Move nav outside the blurred header on mobile so the fixed backdrop isn't clipped.
+    const placeNav = (isDesktop) => {
+      if (!header || !headerInner) {
+        return;
+      }
+      if (isDesktop) {
+        if (siteNav.parentElement !== headerInner) {
+          if (navReturnPoint && navReturnPoint.parentElement === headerInner) {
+            headerInner.insertBefore(siteNav, navReturnPoint);
+          } else {
+            headerInner.appendChild(siteNav);
+          }
+        }
+      } else if (siteNav.parentElement !== header) {
+        header.appendChild(siteNav);
+      }
     };
 
-    const openMobileNav = () => {
+    const updateBackdropOffset = () => {
+      if (!navBackdrop || desktopQuery.matches || !header) {
+        return;
+      }
+      const { bottom } = header.getBoundingClientRect();
+      navBackdrop.style.top = `${Math.max(0, Math.round(bottom))}px`;
+      navBackdrop.style.bottom = "0";
+    };
+
+    const resetBackdropOffset = () => {
+      if (!navBackdrop) {
+        return;
+      }
+      navBackdrop.style.removeProperty("top");
+      navBackdrop.style.removeProperty("bottom");
+    };
+
+    placeNav(desktopQuery.matches);
+
+    const syncAriaHidden = () => {
+      if (desktopQuery.matches) {
+        siteNav.removeAttribute("aria-hidden");
+      } else {
+        siteNav.setAttribute("aria-hidden", siteNav.classList.contains("is-open") ? "false" : "true");
+      }
+    };
+
+    const closeNav = ({ focusToggle = false } = {}) => {
+      siteNav.classList.remove("is-open");
+      navToggle.classList.remove("is-active");
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+      resetBackdropOffset();
+      syncAriaHidden();
+      if (focusToggle) {
+        navToggle.focus();
+      }
+    };
+
+    const openNav = () => {
+      if (desktopQuery.matches) {
+        return;
+      }
+      siteNav.classList.add("is-open");
       navToggle.classList.add("is-active");
       navToggle.setAttribute("aria-expanded", "true");
-      mobileNav.classList.add("is-open");
-      mobileNav.setAttribute("aria-hidden", "false");
       document.body.classList.add("menu-open");
+      syncAriaHidden();
+      updateBackdropOffset();
     };
 
     navToggle.addEventListener("click", () => {
+      if (desktopQuery.matches) {
+        return;
+      }
       const expanded = navToggle.getAttribute("aria-expanded") === "true";
       if (expanded) {
-        closeMobileNav();
+        closeNav();
       } else {
-        openMobileNav();
+        openNav();
       }
     });
 
-    mobileNav.addEventListener("click", (event) => {
-      if (event.target === mobileNav) {
-        closeMobileNav();
-      }
+    if (navBackdrop) {
+      navBackdrop.addEventListener("click", () => {
+        if (!desktopQuery.matches) {
+          closeNav();
+        }
+      });
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!desktopQuery.matches) {
+          closeNav();
+        }
+      });
     });
 
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => closeMobileNav());
-    });
+    const handleBreakpointChange = (event) => {
+      placeNav(event.matches);
+      resetBackdropOffset();
+      if (event.matches) {
+        closeNav();
+      } else {
+        syncAriaHidden();
+      }
+    };
+
+    handleBreakpointChange(desktopQuery);
+    if (typeof desktopQuery.addEventListener === "function") {
+      desktopQuery.addEventListener("change", handleBreakpointChange);
+    } else {
+      desktopQuery.addListener(handleBreakpointChange);
+    }
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        closeMobileNav();
+      if (siteNav.classList.contains("is-open") && !desktopQuery.matches) {
+        updateBackdropOffset();
       }
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMobileNav();
+      if (event.key === "Escape" && siteNav.classList.contains("is-open") && !desktopQuery.matches) {
+        closeNav({ focusToggle: true });
       }
     });
   }

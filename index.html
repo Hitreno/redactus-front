@@ -32,12 +32,15 @@
           <img class="brand__mark" src="assets/images/logo.png" alt="Редактус" width="36" height="36" />
           <span>Редактус</span>
         </a>
-        <nav class="nav-links" aria-label="Основное меню">
-          <a class="nav-link" href="#benefits" data-nav-link>Преимущества</a>
-          <a class="nav-link" href="#workflow" data-nav-link>Как работает</a>
-          <a class="nav-link" href="#pricing" data-nav-link>Тарифы</a>
-          <a class="nav-link" href="#fits" data-nav-link>Кому подойдет</a>
-          <a class="nav-link" href="#faq" data-nav-link>FAQ</a>
+        <nav class="site-nav" aria-label="Основное меню" data-nav>
+          <div class="site-nav__backdrop" data-nav-backdrop></div>
+          <div class="site-nav__panel" id="main-navigation" data-nav-panel>
+            <a class="nav-link" href="#benefits" data-nav-link>Преимущества</a>
+            <a class="nav-link" href="#workflow" data-nav-link>Как работает</a>
+            <a class="nav-link" href="#pricing" data-nav-link>Тарифы</a>
+            <a class="nav-link" href="#fits" data-nav-link>Кому подойдет</a>
+            <a class="nav-link" href="#faq" data-nav-link>FAQ</a>
+          </div>
         </nav>
         <div class="header-actions">
           <a class="button button--primary header-login" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
@@ -51,23 +54,12 @@
           </a>
           <a class="button button--outline header-contact" href="#contact">Связаться</a>
         </div>
-        <button class="header-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+        <button class="header-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>
           <span class="header-toggle__line"></span>
           <span class="header-toggle__line"></span>
           <span class="header-toggle__line"></span>
           <span class="sr-only">Меню</span>
         </button>
-      </div>
-      <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
-        <div class="mobile-nav__panel">
-          <nav class="mobile-nav__links" aria-label="Мобильное меню">
-            <a class="mobile-nav__link" href="#benefits" data-mobile-link>Преимущества</a>
-            <a class="mobile-nav__link" href="#workflow" data-mobile-link>Как работает</a>
-            <a class="mobile-nav__link" href="#pricing" data-mobile-link>Тарифы</a>
-            <a class="mobile-nav__link" href="#fits" data-mobile-link>Кому подойдет</a>
-            <a class="mobile-nav__link" href="#faq" data-mobile-link>FAQ</a>
-          </nav>
-        </div>
       </div>
     </header>
 
@@ -145,7 +137,7 @@
             </p>
             <div class="try-grid__visual">
               <div class="try-visual">
-                <a class="button button--primary try-visual__cta" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
+                <a class="try-visual__cta" href="https://t.me/redactusbot" target="_blank" rel="noopener noreferrer">
                   Попробовать в Telegram
                 </a>
                 <div class="try-visual__body">

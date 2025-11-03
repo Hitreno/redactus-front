@@ -1107,6 +1107,10 @@ main {
 
 .site-nav {
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0;
   pointer-events: none;
   opacity: 0;
@@ -1121,16 +1125,31 @@ main {
 
 .site-nav__backdrop {
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   inset: 0;
-  background: rgba(15, 23, 42, 0.35);
-  backdrop-filter: blur(10px);
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.25s ease;
   z-index: 0;
 }
 
-.site-nav.is-open .site-nav__backdrop {
+.site-nav__backdrop.is-active {
   opacity: 1;
+}
+
+.site-nav__backdrop-layer {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+  display: none;
+}
+
+.site-nav__backdrop.is-active .site-nav__backdrop-layer {
+  display: block;
 }
 
 .site-nav__panel {
