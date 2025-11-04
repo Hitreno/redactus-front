@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showStatus("success", "Заявка отправлена! Свяжемся в течение дня.", { autoHide: true });
     } catch (error) {
       const message = deriveErrorMessage(error);
-      showStatus("error", message, { autoHide: true, html: true });
+      showStatus("error", message, { html: true });
       console.error("Callback form submission error:", error);
     } finally {
       setSubmitting(false);

@@ -810,6 +810,7 @@ main {
   display: grid;
   gap: 16px;
   position: relative;
+  margin: 0;
 }
 
 .form-field {
@@ -932,7 +933,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-start;
+  align-items: stretch;
+  width: 100%;
+}
+
+.form-footer .button {
+  width: 100%;
 }
 
 .contact-card {
@@ -944,7 +950,8 @@ main {
   margin: 0;
   max-width: none;
   width: 100%;
-  padding: 28px;
+  padding: 28px 28px 12px;
+
 }
 
 .contact-card__title {
