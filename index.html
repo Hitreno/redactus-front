@@ -23,7 +23,13 @@
     />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="app.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/captcha.js"></script>
+    <script
+      defer
+      src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=smartCaptchaOnload"
+    ></script>
+    <script defer src="js/form.js"></script>
   </head>
   <body>
     <header class="site-header" data-header>
@@ -205,6 +211,7 @@
                 <div class="form-footer">
                   <button type="submit" class="button button--primary">Оставить заявку</button>
                 </div>
+                <div id="smartcaptcha-container"></div>
                 <div class="form-status" data-form-status hidden></div>
               </form>
             </article>
