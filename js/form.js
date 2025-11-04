@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const consentCheckbox = form.querySelector("[data-accept-terms]");
   const statusOverlay = form.querySelector("[data-form-status]");
   const statusClasses = ["contact-form--status-pending", "contact-form--status-success", "contact-form--status-error"];
+  const fallbackErrorMessage =
+    'К сожалению форма на обслуживании. Свяжитесь пожалуйста по номеру +79881616017 или напишите в телеграм <a href="https://t.me/hitreno" target="_blank" rel="noopener noreferrer">@hitreno</a>';
   let statusTimer = null;
 
   const clearStatus = () => {
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const showStatus = (state, message, { autoHide = false, delay = 4000 } = {}) => {
+  const showStatus = (state, message, { autoHide = false, delay = 2000, html = false } = {}) => {
     if (!statusOverlay) {
       return;
     }
@@ -37,7 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state) {
       form.classList.add(`contact-form--status-${state}`);
     }
-    statusOverlay.textContent = message;
+    if (html) {
+      statusOverlay.innerHTML = message;
+    } else {
+      statusOverlay.textContent = message;
+    }
     statusOverlay.hidden = false;
 
     if (autoHide) {
@@ -57,20 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   clearStatus();
 
-  const deriveErrorMessage = (error) => {
-    if (!(error instanceof Error)) {
-      return "Не удалось отправить заявку. Попробуйте ещё раз.";
-    }
-    const allowedMessages = new Set([
-      "Сервис проверки недоступен. Попробуйте позже.",
-      "Проверка уже выполняется. Завершите текущую проверку.",
-      "Не удалось запустить проверку.",
-    ]);
-    if (allowedMessages.has(error.message)) {
-      return error.message;
-    }
-    return "Не удалось отправить заявку. Попробуйте ещё раз.";
-  };
+  const deriveErrorMessage = () => fallbackErrorMessage;
 
   const requestCaptchaToken = async () => {
     if (!window.captchaManager || typeof window.captchaManager.requestToken !== "function") {
@@ -132,10 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (consentCheckbox) {
         consentCheckbox.checked = false;
       }
-      showStatus("success", "Заявка отправлена! Свяжемся в течение дня.", { autoHide: true, delay: 4000 });
+      showStatus("success", "Заявка отправлена! Свяжемся в течение дня.", { autoHide: true });
     } catch (error) {
       const message = deriveErrorMessage(error);
-      showStatus("error", message);
+      showStatus("error", message, { autoHide: true, html: true });
       console.error("Callback form submission error:", error);
     } finally {
       setSubmitting(false);
