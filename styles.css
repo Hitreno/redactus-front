@@ -132,6 +132,10 @@ main {
   margin-bottom: 32px;
 }
 
+#compare .section__header {
+  gap: 8px;
+}
+
 .section__lead {
   color: var(--text-muted);
   font-size: 1.05rem;
@@ -297,6 +301,10 @@ main {
   overflow: hidden;
 }
 
+.card--gradient .card__text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .card__title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -420,7 +428,7 @@ main {
 
 .mini-steps {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -429,7 +437,7 @@ main {
 .mini-steps__item {
   display: flex;
   gap: 16px;
-  padding: 20px;
+  padding: 16px 20px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 18px 45px -38px var(--shadow-color);
@@ -459,26 +467,26 @@ main {
 .try-grid__main {
   display: grid;
   gap: 24px;
+  align-content: start;
 }
 
 .try-grid__cta {
-  align-self: flex-start;
+  width: 100%;
+  padding: 18px 42px;
+  font-size: 1.08rem;
 }
 
 .try-grid__visual {
-  margin-top: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .try-visual {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  margin-inline: auto;
 }
 
 .try-visual__body {
   position: relative;
-  width: min(420px, 100%);
   border-radius: 32px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.98);
@@ -486,10 +494,9 @@ main {
 }
 
 .try-visual__body img {
-  display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  display: block;
 }
 
 .try-grid__sidebar {
@@ -776,13 +783,8 @@ main {
 }
 
 .faq__content.is-open {
-  padding: 0 24px 30px;
-  max-height: 480px;
+  padding: 10px 24px 28px;
   opacity: 1;
-}
-
-.faq__item.is-open .faq__content {
-  padding-bottom: 40px;
 }
 
 .faq__content p {
@@ -796,6 +798,7 @@ main {
 .contact-form {
   display: grid;
   gap: 16px;
+  position: relative;
 }
 
 .form-field {
@@ -807,6 +810,91 @@ main {
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--text-main);
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.form-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.form-consent label {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.form-consent a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.form-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 28px;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: scale(0.98);
+  z-index: 1;
+}
+
+.contact-form--status > *:not(.form-status) {
+  opacity: 0.25;
+  filter: blur(0.5px);
+  transition: opacity 0.25s ease;
+}
+
+.contact-form--status .form-status {
+  opacity: 1;
+  pointer-events: none;
+  transform: scale(1);
+}
+
+.contact-form--status-pending .form-status {
+  background: rgba(41, 168, 232, 0.12);
+  color: var(--primary-dark);
+}
+
+.contact-form--status-pending {
+  pointer-events: none;
+}
+
+.contact-form--status-success {
+  pointer-events: none;
+}
+
+.contact-form--status-success .form-status {
+  background: rgba(34, 197, 94, 0.14);
+  color: #166534;
+}
+
+.contact-form--status-error .form-status {
+  background: rgba(239, 68, 68, 0.18);
+  color: #b91c1c;
+}
+
+.form-field--required label::after {
+  content: " *";
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .form-field input,
@@ -834,16 +922,6 @@ main {
   flex-direction: column;
   gap: 12px;
   align-items: flex-start;
-}
-
-.form-note {
-  font-size: 0.9rem;
-  color: var(--text-soft);
-}
-
-.success-note {
-  font-weight: 600;
-  color: var(--primary-dark);
 }
 
 .contact-card {
@@ -1008,6 +1086,7 @@ main {
   margin: 0;
   text-align: center;
 }
+
 
 .site-header {
   position: fixed;
@@ -1397,7 +1476,8 @@ main {
   box-shadow: 0 32px 70px -50px var(--shadow-color);
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 16px 18px;
+  row-gap: 8px;
+  column-gap: 18px;
   align-items: center;
 }
 
@@ -1435,7 +1515,7 @@ main {
 }
 
 .compare-card .card__title {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .compare-card .card__text {
@@ -1656,6 +1736,24 @@ main {
     margin-top: 24px;
   }
 
+  .try-grid {
+    align-items: start;
+  }
+
+  .try-grid__main {
+    height: auto;
+  }
+
+  .try-grid__cta {
+    max-width: none;
+    margin-inline: 0;
+    padding: 16px 24px;
+  }
+
+  .try-visual {
+    max-width: none;
+  }
+
   .pricing-card__price {
     font-size: 1.9rem;
   }
@@ -1780,6 +1878,9 @@ main {
   .site-nav {
     position: static;
     display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
     opacity: 1;
     pointer-events: auto;
     transition: none;
@@ -1800,7 +1901,9 @@ main {
     background: transparent;
     box-shadow: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
   }
 
   .site-nav__panel .nav-link {

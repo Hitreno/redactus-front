@@ -147,7 +147,7 @@
             <div class="try-grid__visual">
               <div class="try-visual">
                 <div class="try-visual__body">
-                  <img src="assets/images/genex1.png" alt="Скриншот результата работы Редактус" loading="lazy" />
+                  <img src="assets/images/genex2.png" alt="Скриншот результата работы Редактус" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -177,11 +177,11 @@
             <article id="contact" class="card card--soft contact-card contact-card--inline try-card" data-section>
               <h3 class="contact-card__title">Остались вопросы?</h3>
               <form class="contact-form" data-callback-form>
-                <div class="form-field">
+                <div class="form-field form-field--required">
                   <label for="name">Имя</label>
                   <input id="name" name="name" type="text" placeholder="Как к вам обращаться" required />
                 </div>
-                <div class="form-field">
+                <div class="form-field form-field--required">
                   <label for="contact-field">Контакт</label>
                   <input id="contact-field" name="contact" type="text" placeholder="Телеграм или телефон" required />
                 </div>
@@ -189,10 +189,23 @@
                   <label for="comment">Комментарий</label>
                   <textarea id="comment" name="comment" rows="3" placeholder="Чем можем помочь?"></textarea>
                 </div>
+                <div class="form-consent">
+                  <input id="accept-terms" name="accept_terms" type="checkbox" value="true" required data-accept-terms />
+                  <label for="accept-terms">
+                    Я принимаю
+                    <a
+                      href="https://any.coop/A8SiYeqyXVMaaQsEWGoVjXTJeUx82pv7Bt3Q5HcLm9wxBsjc/politika-obrabotki-personalnykh-dannykh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Политику обработки персональных данных</a
+                    >
+                    и согласен на обработку моих данных.
+                  </label>
+                </div>
                 <div class="form-footer">
                   <button type="submit" class="button button--primary">Оставить заявку</button>
-                  <p class="form-note success-note" data-note-success hidden>Спасибо! Мы свяжемся в течение дня.</p>
                 </div>
+                <div class="form-status" data-form-status hidden></div>
               </form>
             </article>
           </div>
@@ -270,13 +283,13 @@
             </article>
           </div>
           <div class="grid-two workflow-extra">
-            <article class="card card--soft">
+            <article class="card card--gradient workflow-extra__card">
               <h3 class="card__title">Ведите блог в удовольствие</h3>
               <p class="card__text">
                 Сервис забирает рутину оформления: пришла идея — надиктовали — получили пост и рекомендации по визуалу.
               </p>
             </article>
-            <article class="card card--soft">
+            <article class="card card--gradient workflow-extra__card">
               <h3 class="card__title">Освободите время для важного</h3>
               <p class="card__text">
                 Редактус держит ваш tone-of-voice, добавляет структуру, CTA и эмодзи, чтобы вы фокусировались на сути.
@@ -577,7 +590,7 @@
             <a href="#contact">Контакты</a>
           </nav>
         </div>
-        <p class="site-footer__copy">© <span data-current-year></span> Redactus. Все права защищены.</p>
+        <p class="site-footer__copy">© <span data-current-year></span> Redactus. Все права защищены. <a href="https://any.coop/A8SiYeqyXVMaaQsEWGoVjXTJeUx82pv7Bt3Q5HcLm9wxBsjc/politika-obrabotki-personalnykh-dannykh" target="_blank" rel="noopener noreferrer">Политика обработки персональных данных</a></p>
       </div>
     </footer>
   </body>
