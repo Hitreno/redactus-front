@@ -771,20 +771,31 @@ main {
 }
 
 .faq__content {
+  display: grid;
+  grid-template-rows: 0fr;
   padding: 0 24px;
   color: var(--text-main);
   font-size: 0.95rem;
   line-height: 1.6;
-  max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
-  will-change: max-height;
+  transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
+  will-change: grid-template-rows;
 }
 
 .faq__content.is-open {
-  padding: 10px 24px 28px;
+  grid-template-rows: 1fr;
   opacity: 1;
+}
+
+.faq__panel {
+  overflow: hidden;
+  padding: 0;
+  transition: padding 0.35s ease;
+}
+
+.faq__content.is-open .faq__panel {
+  padding: 0 0 24px;
 }
 
 .faq__content p {

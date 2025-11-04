@@ -56,7 +56,7 @@
                 fill="currentColor"
               />
             </svg>
-            <span>Войти</span>
+            <span>Открыть</span>
           </a>
           <a class="button button--outline header-contact" href="#contact">Связаться</a>
         </div>
@@ -148,7 +148,7 @@
                   fill="currentColor"
                 />
               </svg>
-              Попробовать в Telegram
+              Открыть в Telegram
             </a>
             <div class="try-grid__visual">
               <div class="try-visual">
@@ -160,7 +160,7 @@
           </div>
           <div class="try-grid__sidebar">
             <article class="card card--soft try-card">
-              <h3 class="card__title">Мини-инструкция по запуску</h3>
+              <h3 class="card__title">С чего начать?</h3>
               <ol class="mini-steps">
                 <li class="mini-steps__item">
                   <span class="mini-steps__badge">1</span>
@@ -205,7 +205,6 @@
                       rel="noopener noreferrer"
                       >Политику обработки персональных данных</a
                     >
-                    и согласен на обработку моих данных.
                   </label>
                 </div>
                 <div class="form-footer">
@@ -415,27 +414,27 @@
           </div>
           <div class="segments-grid">
             <article class="segment">
-              <h3 class="card__title">Эксперт</h3>
+              <h3 class="card__title">Эксперта</h3>
               <p class="card__text">
                 Выкладывайте мысли и экспертные посты в своём стиле. Редактус органично напомнит об инфопродуктах.
               </p>
             </article>
             <article class="segment">
-              <h3 class="card__title">Сфера услуг</h3>
+              <h3 class="card__title">Сферы услуг</h3>
               <p class="card__text">
                 Регулярно напоминайте о сервисах: анонсы, кейсы, акции и отзывы оформлены за минуты.
               </p>
             </article>
             <article class="segment">
-              <h3 class="card__title">Стартап</h3>
+              <h3 class="card__title">Фаундера стартапа</h3>
               <p class="card__text">Оптимизируйте контент-маркетинг. Публикуйте инсайты и апдейты без простоев.</p>
             </article>
             <article class="segment">
-              <h3 class="card__title">SMM / Продюсер</h3>
+              <h3 class="card__title">SMM / Продюсера</h3>
               <p class="card__text">Ведите несколько клиентов в их стиле. Ускоряйте процесс и берите больше проектов.</p>
             </article>
             <article class="segment">
-              <h3 class="card__title">Проектная студия</h3>
+              <h3 class="card__title">Проектной студии</h3>
               <p class="card__text">
                 Прогревайте аудиторию экспертными постами и кейсами. Редактус ненавязчиво упоминает услуги.
               </p>
@@ -490,73 +489,153 @@
           </div>
           <div class="faq" role="list">
             <article class="faq__item">
-              <button type="button" class="faq__button" data-faq-toggle>
+              <button
+                type="button"
+                class="faq__button"
+                id="faq-trigger-1"
+                aria-expanded="false"
+                aria-controls="faq-panel-1"
+                data-faq-toggle
+              >
                 <span>Я специфично оформляю посты. Повторит ли это сервис?</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
                 </svg>
               </button>
-              <div class="faq__content" data-faq-content>
-                <p>
-                  Выберите тариф Стандарт или Премиум — туда входит донастройка стилистики. Мы повторим подписи, формат общения и
-                  заголовки.
-                </p>
+              <div
+                class="faq__content"
+                id="faq-panel-1"
+                role="region"
+                aria-labelledby="faq-trigger-1"
+                aria-hidden="true"
+                data-faq-content
+              >
+                <div class="faq__panel">
+                  <p>
+                    Выберите тариф Стандарт или Премиум — туда входит донастройка стилистики. Мы повторим подписи, формат общения и
+                    заголовки.
+                  </p>
+                </div>
               </div>
             </article>
             <article class="faq__item">
-              <button type="button" class="faq__button" data-faq-toggle>
+              <button
+                type="button"
+                class="faq__button"
+                id="faq-trigger-2"
+                aria-expanded="false"
+                aria-controls="faq-panel-2"
+                data-faq-toggle
+              >
                 <span>Это долго подключать?</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
                 </svg>
               </button>
-              <div class="faq__content" data-faq-content>
-                <p>
-                  Около минуты. Перейдите в @redactusbot, при желании поделитесь ссылкой на канал. Если понадобится донастройка, она
-                  включена в тарифы Стандарт и Бизнес.
-                </p>
+              <div
+                class="faq__content"
+                id="faq-panel-2"
+                role="region"
+                aria-labelledby="faq-trigger-2"
+                aria-hidden="true"
+                data-faq-content
+              >
+                <div class="faq__panel">
+                  <p>
+                    Около минуты. Перейдите в @redactusbot, при желании поделитесь ссылкой на канал. Если понадобится донастройка, она
+                    включена в тарифы Стандарт и Бизнес.
+                  </p>
+                </div>
               </div>
             </article>
             <article class="faq__item">
-              <button type="button" class="faq__button" data-faq-toggle>
+              <button
+                type="button"
+                class="faq__button"
+                id="faq-trigger-3"
+                aria-expanded="false"
+                aria-controls="faq-panel-3"
+                data-faq-toggle
+              >
                 <span>Если мне не понравится пост?</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
                 </svg>
               </button>
-              <div class="faq__content" data-faq-content>
-                <p>
-                  Отредактируйте текст или запустите генерацию снова. Если ситуация повторяется, мы точечно донастроим сервис под ваши
-                  правила — в тарифах Стандарт и Бизнес это входит.
-                </p>
+              <div
+                class="faq__content"
+                id="faq-panel-3"
+                role="region"
+                aria-labelledby="faq-trigger-3"
+                aria-hidden="true"
+                data-faq-content
+              >
+                <div class="faq__panel">
+                  <p>
+                    Отредактируйте текст или запустите генерацию снова. Если ситуация повторяется, мы точечно донастроим сервис под ваши
+                    правила — в тарифах Стандарт и Бизнес это входит.
+                  </p>
+                </div>
               </div>
             </article>
             <article class="faq__item">
-              <button type="button" class="faq__button" data-faq-toggle>
+              <button
+                type="button"
+                class="faq__button"
+                id="faq-trigger-4"
+                aria-expanded="false"
+                aria-controls="faq-panel-4"
+                data-faq-toggle
+              >
                 <span>Чем отличается от обычного GPT?</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
                 </svg>
               </button>
-              <div class="faq__content" data-faq-content>
-                <p>
-                  Редактус экономит время и удерживает ваш стиль. GPT требует промптов и выдаёт обезличенный текст, клиенты жалуются на
-                  «роботизированность».
-                </p>
+              <div
+                class="faq__content"
+                id="faq-panel-4"
+                role="region"
+                aria-labelledby="faq-trigger-4"
+                aria-hidden="true"
+                data-faq-content
+              >
+                <div class="faq__panel">
+                  <p>
+                    Редактус экономит время и удерживает ваш стиль. GPT требует промптов и выдаёт обезличенный текст, клиенты жалуются на
+                    «роботизированность».
+                  </p>
+                </div>
               </div>
             </article>
             <article class="faq__item">
-              <button type="button" class="faq__button" data-faq-toggle>
+              <button
+                type="button"
+                class="faq__button"
+                id="faq-trigger-5"
+                aria-expanded="false"
+                aria-controls="faq-panel-5"
+                data-faq-toggle
+              >
                 <span>Не хочу давать доступ к каналу</span>
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M12 15.5 6.2 9.7a1 1 0 0 1 1.4-1.4l4.4 4.39 4.4-4.4a1 1 0 0 1 1.4 1.42L12 15.5Z" fill="currentColor" />
                 </svg>
               </button>
-              <div class="faq__content" data-faq-content>
-                <p>
-                  Мы не просим доступ. Достаточно ссылки, чтобы изучить канал как читатель. Если кто-то просит доступ от нашего имени —
-                  напишите @hitreno.
-                </p>
+              <div
+                class="faq__content"
+                id="faq-panel-5"
+                role="region"
+                aria-labelledby="faq-trigger-5"
+                aria-hidden="true"
+                data-faq-content
+              >
+                <div class="faq__panel">
+                  <p>
+                    Мы не просим доступ. Достаточно ссылки, чтобы изучить канал как читатель. Если кто-то просит доступ от нашего имени —
+                    напишите @hitreno.
+                  </p>
+                </div>
               </div>
             </article>
           </div>

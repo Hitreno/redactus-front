@@ -210,9 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       button.setAttribute("aria-expanded", "false");
-      content.classList.remove("is-open");
       content.setAttribute("aria-hidden", "true");
-      content.style.maxHeight = "0px";
+      content.classList.remove("is-open");
       item.classList.remove("is-open");
     };
 
@@ -223,16 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       button.setAttribute("aria-expanded", "true");
-      content.classList.add("is-open");
       content.setAttribute("aria-hidden", "false");
-      const targetHeight = `${content.scrollHeight}px`;
-      content.style.maxHeight = targetHeight;
-      requestAnimationFrame(() => {
-        if (content.classList.contains("is-open")) {
-          content.style.maxHeight = `${content.scrollHeight}px`;
-        }
-      });
       item.classList.add("is-open");
+      content.classList.add("is-open");
     };
 
     faqItems.forEach((item) => {
@@ -244,7 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       button.setAttribute("aria-expanded", "false");
       content.setAttribute("aria-hidden", "true");
-      content.style.maxHeight = "0px";
+      content.classList.remove("is-open");
+      item.classList.remove("is-open");
 
       button.addEventListener("click", () => {
         const isOpen = button.getAttribute("aria-expanded") === "true";
@@ -256,25 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      content.addEventListener("transitionend", (event) => {
-        if (event.propertyName !== "max-height") {
-          return;
-        }
-        if (content.classList.contains("is-open")) {
-          content.style.maxHeight = `${content.scrollHeight}px`;
-        } else {
-          content.style.maxHeight = "0px";
-        }
-      });
-    });
-
-    window.addEventListener("resize", () => {
-      faqItems.forEach((item) => {
-        const content = item.querySelector("[data-faq-content]");
-        if (content && content.classList.contains("is-open")) {
-          content.style.maxHeight = `${content.scrollHeight}px`;
-        }
-      });
     });
   }
 
