@@ -225,7 +225,13 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-expanded", "true");
       content.classList.add("is-open");
       content.setAttribute("aria-hidden", "false");
-      content.style.maxHeight = `${content.scrollHeight}px`;
+      const targetHeight = `${content.scrollHeight}px`;
+      content.style.maxHeight = targetHeight;
+      requestAnimationFrame(() => {
+        if (content.classList.contains("is-open")) {
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        }
+      });
       item.classList.add("is-open");
     };
 
@@ -254,7 +260,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.propertyName !== "max-height") {
           return;
         }
-        if (!content.classList.contains("is-open")) {
+        if (content.classList.contains("is-open")) {
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        } else {
           content.style.maxHeight = "0px";
         }
       });
